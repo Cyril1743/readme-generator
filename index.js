@@ -45,7 +45,7 @@ const questions = [
         name: "image"
     },
     {
-        type: "checkbox",
+        type: "list",
         message: "What is the license?",
         name: "license",
         choices: ["MIT", "GPLv2", "Apache 2.0", "GPLv3"]
