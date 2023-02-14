@@ -70,7 +70,11 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, "")
+    fs.writeFile(fileName, "", function (err) {
+        if (err) {
+            console.log(err)
+        }
+    })
     inquirer.prompt(data)
         .then(function (data) {
             fs.appendFile(fileName, generateMarkdown(data), function (err) {
