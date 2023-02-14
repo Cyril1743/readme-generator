@@ -35,33 +35,48 @@ const questions = [
         name: "learn"
     },
     {
-        type: "input",
-        message: "What is the link to the deployed application?",
-        name: "link"
-    },
-    {
-        type: "input",
-        message: "What is the path to the screenshot?",
-        name: "image"
-    },
-    {
         type: "list",
         message: "What is the license?",
         name: "license",
         choices: ["MIT", "GPLv2", "Apache 2.0", "GPLv3"]
+    },
+    {
+        type: "input",
+        message: "How do users install this application?",
+        name: "installation"
+    },
+    {
+        type: "input",
+        message: "How do users use this application?",
+        name: "usage"
+    },
+    {
+        type: "input",
+        message: "Guidelines for contribution?",
+        name: "contributions"
+    }, {
+        type: "input",
+        message: "Any tests you'd like users to run?",
+        name: "tests"
+    }, {
+        type: "input",
+        message: "What is your GitHub username?",
+        name: "github"
+    }, {
+        type: "input",
+        message: "What email should users send questions?",
+        name: "email"
     }];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, "", function (err) {
-        err ? console.log(err) : console.log("Successfully created document!")
-    })
+    fs.writeFile(fileName, "")
     inquirer.prompt(data)
         .then(function (data) {
             fs.appendFile(fileName, generateMarkdown(data), function (err) {
                 err ? console.log(err) : console.log("Successfully added Data")
             })
-    })
+        })
 }
 
 // TODO: Create a function to initialize app

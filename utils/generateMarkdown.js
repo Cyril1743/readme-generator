@@ -35,27 +35,48 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `## LicenseSection \n ${renderLicenseBadge(license)}${renderLicenseLink(license)}`
+  return `## LicenseSection {#license}
+  ${renderLicenseBadge(license)}${renderLicenseLink(license)}`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} \n
-  ## Description \n
-  ${data.description} \n
-  ## What was the motivation? \n
-  ${data.motivation} \n
-  ## Why did I build it? \n
-  ${data.why} \n
-  ## What problem does it solve? \n
-  ${data.problem} \n
-  ## What did I learn? \n
-  ${data.learn} \n
-  ## Link to deployed application \n
-  [Deployed Application](${data.link}) \n
-  ## Screenshot \n
-  ![Screenshot](${data.image}) \n
+  return `# ${data.title}
+  ## Description {#description}
+  ${data.description}
+  # Table of Contents {#tableofcontents}
+    1. [Description](#description)
+    2. [Table of Contents](#tableofcontents)
+    3. [What was the motivation?](#motivation)
+    4. [Why did I build it?](#why)
+    5. [What problem does it solve?](#problem)
+    6. [What did I learn?](#learn)
+    7. [License](#license)
+    8. [Installation](#installation)
+    9. [Usage](#usage)
+    10. [Contributions](#contributions)
+    11. [Tests](#tests)
+    12. [Questions?](#questions)
+  ## What was the motivation? {#motivation}
+  ${data.motivation}
+  ## Why did I build it? {#why}
+  ${data.why}
+  ## What problem does it solve? {#problem}
+  ${data.problem}
+  ## What did I learn? {#learn}
+  ${data.learn}
   ${renderLicenseSection(data.license)}
+  ## Installation {#installation}
+  ${data.installation}
+  ## Usage {#usage}
+  ${data.usage}
+  ## Contributions {#contributions}
+  ${data.contributions}
+  ## Tests {#tests}
+  ${data.tests}
+  ## Questions? {#questions}
+  ${data.github}
+  ${data.email}
 `;
 }
 
