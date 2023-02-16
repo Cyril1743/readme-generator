@@ -35,46 +35,46 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `## LicenseSection {#license}
+  return `## License Section
   ${renderLicenseBadge(license)}${renderLicenseLink(license)}`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ## Description {#description}
+  ## Description
   ${data.description}
-  # Table of Contents {#tableofcontents}
-    1. [Description](#description)
-    2. [Table of Contents](#tableofcontents)
-    3. [What was the motivation?](#motivation)
-    4. [Why did I build it?](#why)
-    5. [What problem does it solve?](#problem)
-    6. [What did I learn?](#learn)
-    7. [License](#license)
-    8. [Installation](#installation)
-    9. [Usage](#usage)
-    10. [Contributions](#contributions)
-    11. [Tests](#tests)
-    12. [Questions?](#questions)
-  ## What was the motivation? {#motivation}
+  # Table of Contents
+  1. [Description](#description)
+  2. [Table of Contents](#table-of-contents)
+  3. [What was the motivation?](#what-was-the-motivation)
+  4. [Why did I build it?](#why-did-i-build-it)
+  5. [What problem does it solve?](#what-problem-does-it-solve)
+  6. [What did I learn?](#what-did-i-learn)
+  7. [License Section](#license-section)
+  8. [Installation](#installation)
+  9. [Usage](#usage)
+  10. [Contributions](#contributions)
+  11. [Tests](#tests)
+  12. [Questions?](#questions)
+  ## What was the motivation?
   ${data.motivation}
-  ## Why did I build it? {#why}
+  ## Why did I build it?
   ${data.why}
-  ## What problem does it solve? {#problem}
+  ## What problem does it solve?
   ${data.problem}
-  ## What did I learn? {#learn}
+  ## What did I learn?
   ${data.learn}
   ${renderLicenseSection(data.license)}
-  ## Installation {#installation}
+  ## Installation
   ${data.installation}
-  ## Usage {#usage}
+  ## Usage
   ${data.usage}
-  ## Contributions {#contributions}
+  ## Contributions
   ${data.contributions}
-  ## Tests {#tests}
+  ## Tests
   ${data.tests}
-  ## Questions? {#questions}
+  ## Questions?
   ${data.github}
   ${data.email}
 `;

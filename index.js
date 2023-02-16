@@ -77,7 +77,7 @@ function writeToFile(fileName, data) {
     })
     inquirer.prompt(data)
         .then(function (data) {
-            fs.appendFile(fileName, generateMarkdown(data), function (err) {
+            fs.appendFile(`./utils/${fileName}`, generateMarkdown(data), function (err) {
                 err ? console.log(err) : console.log("Successfully added Data")
             })
         })
